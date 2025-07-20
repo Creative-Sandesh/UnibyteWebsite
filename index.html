@@ -3,78 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UniBytes - Tech Club</title>
-    <meta name="description" content="UniBytes Tech Club - Unifying excellence in every byte">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>UNIBYTES - Tech College Club</title>
+    <meta name="description" content="UNIBYTES is a passionate tech community dedicated to fostering innovation, collaboration, and excellence in technology education.">
+    <link rel="icon" type="image/png" href="Assets/image/Unibytes Icon.svg">
+    <link rel="stylesheet" href="/Css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
-    <header id="header" class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo-section">
-                    <img src="/lovable-uploads/72d76412-a8e6-43de-8462-b682170cf020.png" alt="UniBytes Logo" class="logo">
-                </div>
-                
-                <nav class="nav">
-                    <a href="#home" class="nav-link">Home</a>
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="#members" class="nav-link">Members</a>
-                    <a href="#contact" class="nav-link">Contact</a>
-                </nav>
-                
-                <div class="header-actions">
-                    <button class="btn-hero">Join Club</button>
-                    <button class="mobile-menu-btn" id="mobileMenuBtn">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="/lovable-uploads/7258331e-a5b7-4d2f-8241-261b70727637.png" alt="Unibytes Logo" class="logo-img">
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="nav-links desktop-nav">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#activities">Activities</a>
+                <a href="#team">Team</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                    <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
             </div>
         </div>
-    </header>
+
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav" id="mobileNav">
+            <div class="mobile-nav-content">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#activities">Activities</a>
+                <a href="#team">Team</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-bg"></div>
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-logo">
-                    <img src="/lovable-uploads/bf0c8a0a-467a-4ffe-993b-cd82ded5169c.png" alt="UniBytes - Unifying excellence in every byte" class="hero-logo-img">
-                </div>
-                
-                <p class="hero-description">
-                    Where innovation meets collaboration. Join our vibrant community of tech enthusiasts, 
-                    coders, and future leaders shaping the digital world.
-                </p>
-                
-                <div class="hero-buttons">
-                    <button class="btn-gradient">
-                        Get Started
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
-                    <button class="btn-outline">Learn More</button>
-                </div>
-                
-                <div class="hero-features">
-                    <div class="feature-card">
-                        <i class="fas fa-users feature-icon"></i>
-                        <h3>Community</h3>
-                        <p>Connect with like-minded students and build lasting friendships</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <i class="fas fa-code feature-icon"></i>
-                        <h3>Innovation</h3>
-                        <p>Work on cutting-edge projects and learn the latest technologies</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <i class="fas fa-trophy feature-icon"></i>
-                        <h3>Excellence</h3>
-                        <p>Compete in hackathons and showcase your skills to the world</p>
-                    </div>
-                </div>
+        <div class="floating-shapes">
+            <div class="shape circle" style="top: 10%; left: 10%;"></div>
+            <div class="shape x-mark" style="top: 20%; right: 15%;">×</div>
+            <div class="shape triangle" style="top: 60%; left: 5%;"></div>
+            <div class="shape square" style="top: 15%; left: 50%;"></div>
+            <div class="shape diamond" style="top: 70%; right: 20%;"></div>
+            <div class="shape star" style="top: 40%; right: 40%;">★</div>
+            <div class="shape plus" style="top: 80%; left: 30%;">+</div>
+            <div class="shape circle" style="top: 30%; right: 5%;"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-logo">
+                <img src="/lovable-uploads/d2380e2b-8781-4fe9-bf31-8a3b23602978.png" alt="Unibytes - Unifying excellence in every byte" class="hero-logo-img">
+            </div>
+            <h1 class="hero-title">
+                Welcome to <span class="text-primary">UNIBYTES</span>
+            </h1>
+            <p class="hero-subtitle">
+                Unifying excellence in every byte. Join our passionate tech community dedicated to fostering innovation, collaboration, and excellence in technology education.
+            </p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary">Get Started</button>
+                <button class="btn btn-outline">Learn More</button>
             </div>
         </div>
     </section>
@@ -83,294 +103,320 @@
     <section id="about" class="about">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">
-                    About <span class="gradient-text">UniBytes</span>
-                </h2>
-                <p class="section-description">
-                    UniBytes is more than just a tech club - we're a family of passionate developers, 
-                    designers, and innovators working together to push the boundaries of technology.
-                </p>
+                <h2>About UNIBYTES</h2>
+                <p>Fostering innovation and excellence in technology education</p>
             </div>
-
+            
             <div class="about-content">
-                <div class="about-mission">
-                    <h3>Our Mission</h3>
-                    <p>
-                        To foster a collaborative environment where students can learn, grow, and innovate 
-                        together. We believe in hands-on learning, peer mentorship, and real-world project experience.
-                    </p>
+                <div class="about-text">
+                    <h3>Who We Are</h3>
+                    <p>UNIBYTES is a dynamic tech community that brings together passionate students, innovators, and technology enthusiasts. We believe in the power of collaboration and knowledge sharing to drive technological advancement.</p>
                     
-                    <div class="achievements">
-                        <div class="achievement">
-                            <i class="fas fa-check-circle"></i>
-                            <span>50+ Active Members</span>
-                        </div>
-                        <div class="achievement">
-                            <i class="fas fa-check-circle"></i>
-                            <span>25+ Projects Completed</span>
-                        </div>
-                        <div class="achievement">
-                            <i class="fas fa-check-circle"></i>
-                            <span>10+ Hackathon Wins</span>
-                        </div>
-                        <div class="achievement">
-                            <i class="fas fa-check-circle"></i>
-                            <span>5+ Industry Partnerships</span>
-                        </div>
-                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To create an environment where students can learn, grow, and excel in various aspects of technology. We aim to bridge the gap between academic learning and industry requirements through hands-on experiences and mentorship.</p>
+                    
+                    <h3>Our Vision</h3>
+                    <p>To be the leading tech community that nurtures the next generation of technology leaders and innovators who will shape the future of the digital world.</p>
                 </div>
-
-                <div class="about-activities">
-                    <h3>What We Do</h3>
-                    <div class="activity-list">
-                        <div class="activity">
-                            <div class="activity-dot"></div>
-                            <div>
-                                <h4>Weekly Workshops</h4>
-                                <p>Learn new technologies and frameworks</p>
-                            </div>
-                        </div>
-                        <div class="activity">
-                            <div class="activity-dot"></div>
-                            <div>
-                                <h4>Project Collaborations</h4>
-                                <p>Work on real-world projects with peers</p>
-                            </div>
-                        </div>
-                        <div class="activity">
-                            <div class="activity-dot"></div>
-                            <div>
-                                <h4>Hackathon Participation</h4>
-                                <p>Compete in national and international events</p>
-                            </div>
-                        </div>
-                        <div class="activity">
-                            <div class="activity-dot"></div>
-                            <div>
-                                <h4>Industry Mentorship</h4>
-                                <p>Connect with professionals and alumni</p>
-                            </div>
-                        </div>
+                
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <h3>200+</h3>
+                        <p>Active Members</p>
                     </div>
-                </div>
-            </div>
-
-            <div class="technologies">
-                <h3>Technologies We Work With</h3>
-                <div class="tech-badges">
-                    <span class="badge">React</span>
-                    <span class="badge">TypeScript</span>
-                    <span class="badge">Python</span>
-                    <span class="badge">JavaScript</span>
-                    <span class="badge">Node.js</span>
-                    <span class="badge">MongoDB</span>
-                    <span class="badge">PostgreSQL</span>
-                    <span class="badge">AWS</span>
-                    <span class="badge">Docker</span>
-                    <span class="badge">Kubernetes</span>
-                    <span class="badge">Machine Learning</span>
-                    <span class="badge">AI</span>
-                    <span class="badge">Blockchain</span>
-                    <span class="badge">Mobile Development</span>
+                    <div class="stat-card">
+                        <h3>50+</h3>
+                        <p>Projects Completed</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>25+</h3>
+                        <p>Workshops Conducted</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>10+</h3>
+                        <p>Industry Partners</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Members Section -->
-    <section id="members" class="members">
+    <!-- Activities Section -->
+    <section id="activities" class="activities">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">
-                    Meet Our <span class="gradient-text">Team</span>
-                </h2>
-                <p class="section-description">
-                    Get to know the amazing individuals who make UniBytes a thriving community 
-                    of innovation and collaboration.
-                </p>
+                <h2>What We Do</h2>
+                <p>Empowering students through diverse tech activities and learning opportunities</p>
             </div>
+            
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <div class="activity-icon">🏆</div>
+                    <h3>Hackathons</h3>
+                    <p>Participate in exciting 24-48 hour coding competitions where creativity meets technology. Build innovative solutions and compete with fellow developers.</p>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-icon">🤝</div>
+                    <h3>Project Collaboration</h3>
+                    <p>Work together on real-world projects that make a difference. Learn from peers and contribute to open-source initiatives.</p>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-icon">👨‍💼</div>
+                    <h3>Industry Mentorship</h3>
+                    <p>Connect with industry professionals who guide your career journey. Get insights into the latest trends and best practices.</p>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-icon">📚</div>
+                    <h3>Workshops</h3>
+                    <p>Attend hands-on workshops covering cutting-edge technologies. From AI/ML to blockchain, expand your technical skillset.</p>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-icon">🚀</div>
+                    <h3>Tech Talks</h3>
+                    <p>Listen to inspiring talks by industry leaders and researchers. Stay updated with the latest technological advancements.</p>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-icon">💼</div>
+                    <h3>Career Development</h3>
+                    <p>Prepare for your tech career with resume reviews, interview prep, and networking opportunities with top companies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <div class="members-grid">
-                <div class="member-card">
-                    <div class="member-image-wrapper">
-                        <img src="src/assets/member-1.jpg" alt="Arjun Patel" class="member-image">
-                        <div class="member-overlay"></div>
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet Our Team</h2>
+                <p>The passionate individuals driving innovation at UNIBYTES</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">AS</div>
                     </div>
-                    <div class="member-info">
-                        <h3>Arjun Patel</h3>
-                        <span class="member-role">President</span>
-                        <p class="member-description">Full-stack developer passionate about creating innovative solutions.</p>
-                        <div class="member-skills">
-                            <span class="skill-badge">React</span>
-                            <span class="skill-badge">Node.js</span>
-                            <span class="skill-badge">Python</span>
+                    <h3>Arjun Sharma</h3>
+                    <p class="member-role">President</p>
+                    <p class="member-bio">Leading the club with vision and passion for technology innovation.</p>
+                </div>
+                
+                <div class="team-card">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">PK</div>
+                    </div>
+                    <h3>Priya Kumar</h3>
+                    <p class="member-role">Vice President</p>
+                    <p class="member-bio">Supporting strategic initiatives and member engagement programs.</p>
+                </div>
+                
+                <div class="team-card">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">RG</div>
+                    </div>
+                    <h3>Rahul Gupta</h3>
+                    <p class="member-role">Technical Lead</p>
+                    <p class="member-bio">Overseeing technical projects and mentoring junior developers.</p>
+                </div>
+                
+                <div class="team-card">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">SJ</div>
+                    </div>
+                    <h3>Sneha Jain</h3>
+                    <p class="member-role">Event Coordinator</p>
+                    <p class="member-bio">Organizing workshops, hackathons, and community events.</p>
+                </div>
+                
+                <div class="team-card">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">VT</div>
+                    </div>
+                    <h3>Vikram Trivedi</h3>
+                    <p class="member-role">Marketing Head</p>
+                    <p class="member-bio">Managing club communications and brand outreach.</p>
+                </div>
+                
+                <div class="team-card">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">AA</div>
+                    </div>
+                    <h3>Anita Agarwal</h3>
+                    <p class="member-role">Design Lead</p>
+                    <p class="member-bio">Creating stunning visuals and user experiences for club projects.</p>
+                </div>
+                
+                <div class="team-card">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">NP</div>
+                    </div>
+                    <h3>Nikhil Patel</h3>
+                    <p class="member-role">Web Developer</p>
+                    <p class="member-bio">Building and maintaining web applications and digital platforms.</p>
+                </div>
+                
+                <div class="team-card">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">KS</div>
+                    </div>
+                    <h3>Kavya Singh</h3>
+                    <p class="member-role">AI/ML Specialist</p>
+                    <p class="member-bio">Leading machine learning projects and AI research initiatives.</p>
+                </div>
+                
+                <div class="team-card">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">AG</div>
+                    </div>
+                    <h3>Amit Goyal</h3>
+                    <p class="member-role">Mobile Developer</p>
+                    <p class="member-bio">Developing innovative mobile applications for Android and iOS.</p>
+                </div>
+                
+                <div class="team-card">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">RM</div>
+                    </div>
+                    <h3>Riya Mehta</h3>
+                    <p class="member-role">Data Analyst</p>
+                    <p class="member-bio">Analyzing data trends and providing insights for strategic decisions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>Ready to join our tech community? We'd love to hear from you!</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Connect With Us</h3>
+                    <p>Join UNIBYTES and be part of an innovative tech community that's shaping the future.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <strong>📧 Email:</strong>
+                            <span>info@unibytes.tech</span>
                         </div>
-                        <div class="member-social">
-                            <button class="social-btn"><i class="fab fa-github"></i></button>
-                            <button class="social-btn"><i class="fab fa-linkedin"></i></button>
-                            <button class="social-btn"><i class="fas fa-envelope"></i></button>
+                        <div class="contact-item">
+                            <strong>📱 Phone:</strong>
+                            <span>+91 98765 43210</span>
+                        </div>
+                        <div class="contact-item">
+                            <strong>📍 Location:</strong>
+                            <span>Tech College Campus, Innovation Hub</span>
                         </div>
                     </div>
                 </div>
-
-                <div class="member-card">
-                    <div class="member-image-wrapper">
-                        <img src="src/assets/member-2.jpg" alt="Priya Sharma" class="member-image">
-                        <div class="member-overlay"></div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
                     </div>
-                    <div class="member-info">
-                        <h3>Priya Sharma</h3>
-                        <span class="member-role">Vice President</span>
-                        <p class="member-description">AI enthusiast working on machine learning projects and research.</p>
-                        <div class="member-skills">
-                            <span class="skill-badge">AI/ML</span>
-                            <span class="skill-badge">Python</span>
-                            <span class="skill-badge">TensorFlow</span>
-                        </div>
-                        <div class="member-social">
-                            <button class="social-btn"><i class="fab fa-github"></i></button>
-                            <button class="social-btn"><i class="fab fa-linkedin"></i></button>
-                            <button class="social-btn"><i class="fas fa-envelope"></i></button>
-                        </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
                     </div>
-                </div>
-
-                <div class="member-card">
-                    <div class="member-image-wrapper">
-                        <img src="src/assets/member-3.jpg" alt="Rohit Kumar" class="member-image">
-                        <div class="member-overlay"></div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
                     </div>
-                    <div class="member-info">
-                        <h3>Rohit Kumar</h3>
-                        <span class="member-role">Technical Lead</span>
-                        <p class="member-description">Cloud architect and senior developer with expertise in scalable systems.</p>
-                        <div class="member-skills">
-                            <span class="skill-badge">JavaScript</span>
-                            <span class="skill-badge">TypeScript</span>
-                            <span class="skill-badge">AWS</span>
-                        </div>
-                        <div class="member-social">
-                            <button class="social-btn"><i class="fab fa-github"></i></button>
-                            <button class="social-btn"><i class="fab fa-linkedin"></i></button>
-                            <button class="social-btn"><i class="fas fa-envelope"></i></button>
-                        </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
                     </div>
-                </div>
-
-                <div class="member-card">
-                    <div class="member-image-wrapper">
-                        <img src="src/assets/member-4.jpg" alt="Sneha Reddy" class="member-image">
-                        <div class="member-overlay"></div>
-                    </div>
-                    <div class="member-info">
-                        <h3>Sneha Reddy</h3>
-                        <span class="member-role">Design Lead</span>
-                        <p class="member-description">Creative designer focused on user-centered design and frontend development.</p>
-                        <div class="member-skills">
-                            <span class="skill-badge">UI/UX</span>
-                            <span class="skill-badge">Figma</span>
-                            <span class="skill-badge">React</span>
-                        </div>
-                        <div class="member-social">
-                            <button class="social-btn"><i class="fab fa-github"></i></button>
-                            <button class="social-btn"><i class="fab fa-linkedin"></i></button>
-                            <button class="social-btn"><i class="fas fa-envelope"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="member-card">
-                    <div class="member-image-wrapper">
-                        <img src="src/assets/member-5.jpg" alt="Vikram Singh" class="member-image">
-                        <div class="member-overlay"></div>
-                    </div>
-                    <div class="member-info">
-                        <h3>Vikram Singh</h3>
-                        <span class="member-role">Backend Developer</span>
-                        <p class="member-description">Backend specialist building robust and efficient server-side applications.</p>
-                        <div class="member-skills">
-                            <span class="skill-badge">Java</span>
-                            <span class="skill-badge">Spring</span>
-                            <span class="skill-badge">MongoDB</span>
-                        </div>
-                        <div class="member-social">
-                            <button class="social-btn"><i class="fab fa-github"></i></button>
-                            <button class="social-btn"><i class="fab fa-linkedin"></i></button>
-                            <button class="social-btn"><i class="fas fa-envelope"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="member-card">
-                    <div class="member-image-wrapper">
-                        <img src="src/assets/member-6.jpg" alt="Ananya Gupta" class="member-image">
-                        <div class="member-overlay"></div>
-                    </div>
-                    <div class="member-info">
-                        <h3>Ananya Gupta</h3>
-                        <span class="member-role">Mobile Developer</span>
-                        <p class="member-description">Mobile app developer creating cross-platform solutions for modern problems.</p>
-                        <div class="member-skills">
-                            <span class="skill-badge">React Native</span>
-                            <span class="skill-badge">Flutter</span>
-                            <span class="skill-badge">Firebase</span>
-                        </div>
-                        <div class="member-social">
-                            <button class="social-btn"><i class="fab fa-github"></i></button>
-                            <button class="social-btn"><i class="fab fa-linkedin"></i></button>
-                            <button class="social-btn"><i class="fas fa-envelope"></i></button>
-                        </div>
-                    </div>
-                </div>
+                    
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact" class="footer">
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <img src="/lovable-uploads/72d76412-a8e6-43de-8462-b682170cf020.png" alt="UniBytes" class="footer-logo">
-                    <h3>UniBytes</h3>
-                    <p>Unifying excellence in every byte. Join our community of passionate developers and innovators.</p>
-                    <div class="footer-social">
-                        <button class="social-btn"><i class="fab fa-github"></i></button>
-                        <button class="social-btn"><i class="fab fa-twitter"></i></button>
-                        <button class="social-btn"><i class="fab fa-instagram"></i></button>
-                        <button class="social-btn"><i class="fas fa-envelope"></i></button>
+                    <img src="/lovable-uploads/7258331e-a5b7-4d2f-8241-261b70727637.png" alt="Unibytes Logo" class="footer-logo">
+                    <p>Empowering the next generation of tech innovators through collaboration, learning, and innovation.</p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.097.118.112.221.082.343-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.756-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24c6.624 0 11.99-5.367 11.99-12C24.007 5.367 18.641.001 12.017.001z"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
-
+                
                 <div class="footer-links">
                     <div class="footer-section">
                         <h4>Quick Links</h4>
                         <ul>
                             <li><a href="#home">Home</a></li>
                             <li><a href="#about">About</a></li>
-                            <li><a href="#members">Members</a></li>
-                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#activities">Activities</a></li>
+                            <li><a href="#team">Team</a></li>
                         </ul>
                     </div>
-
+                    
                     <div class="footer-section">
-                        <h4>Resources</h4>
+                        <h4>Activities</h4>
                         <ul>
-                            <li><a href="#">Documentation</a></li>
-                            <li><a href="#">Tutorials</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Events</a></li>
+                            <li><a href="#activities">Hackathons</a></li>
+                            <li><a href="#activities">Workshops</a></li>
+                            <li><a href="#activities">Projects</a></li>
+                            <li><a href="#activities">Mentorship</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><a href="#contact">Get in Touch</a></li>
+                            <li><a href="mailto:info@unibytes.tech">Email Us</a></li>
+                            <li><a href="tel:+919876543210">Call Us</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
-
+            
             <div class="footer-bottom">
-                <p>&copy; 2024 UniBytes. All rights reserved.</p>
+                <p>&copy; 2024 UNIBYTES. All rights reserved. | Made with ❤️ by Sandesh Bohara.</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="Js/main.js"></script>
 </body>
 </html>
