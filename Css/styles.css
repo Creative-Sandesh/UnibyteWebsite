@@ -27,7 +27,7 @@
 }
 
 /* Dark theme colors */
-.dark {
+:root.dark {
   --background: hsl(0, 0%, 3.9%);
   --foreground: hsl(0, 0%, 98%);
   --card: hsl(0, 0%, 3.9%);
@@ -62,8 +62,8 @@
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   line-height: 1.6;
-  color: hsl(var(--foreground));
-  background-color: hsl(var(--background));
+  color: var(--foreground);
+  background-color: var(--background);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -138,7 +138,7 @@ html {
   z-index: 1000;
   background-color: hsl(var(--background) / 0.95);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid hsl(var(--border));
+  border-bottom: 1px solid var(--border);
   transition: all 0.3s ease;
 }
 
@@ -163,14 +163,14 @@ html {
 
 .nav-links a {
   text-decoration: none;
-  color: hsl(var(--foreground));
+  color: var(--foreground);
   font-weight: 500;
   transition: color 0.3s ease;
   position: relative;
 }
 
 .nav-links a:hover {
-  color: hsl(var(--primary));
+  color: var(--primary);
 }
 
 .nav-links a::after {
@@ -180,7 +180,7 @@ html {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: hsl(var(--primary));
+  background-color: var(--primary);
   transition: width 0.3s ease;
 }
 
@@ -197,12 +197,12 @@ html {
 .theme-toggle {
   position: relative;
   background: none;
-  border: 1px solid hsl(var(--border));
+  border: 1px solid var(--border);
   border-radius: 6px;
   padding: 0.5rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  color: hsl(var(--foreground));
+  color: var(--foreground);
   width: 2.5rem;
   height: 2.5rem;
   display: flex;
@@ -211,8 +211,8 @@ html {
 }
 
 .theme-toggle:hover {
-  background-color: hsl(var(--accent));
-  border-color: hsl(var(--ring));
+  background-color: var(--accent);
+  border-color: var(--ring);
 }
 
 .theme-toggle .sun-icon {
@@ -236,16 +236,16 @@ html {
 .mobile-menu-btn {
   display: none;
   background: none;
-  border: 1px solid hsl(var(--border));
+  border: 1px solid var(--border);
   border-radius: 6px;
   padding: 0.5rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  color: hsl(var(--foreground));
+  color: var(--foreground);
 }
 
 .mobile-menu-btn:hover {
-  background-color: hsl(var(--accent));
+  background-color: var(--accent);
 }
 
 .mobile-menu-btn .close-icon {
@@ -262,8 +262,8 @@ html {
 
 .mobile-nav {
   display: none;
-  background-color: hsl(var(--background));
-  border-top: 1px solid hsl(var(--border));
+  background-color: var(--background);
+  border-top: 1px solid var(--border);
   padding: 1rem 0;
 }
 
@@ -280,15 +280,15 @@ html {
 
 .mobile-nav-content a {
   text-decoration: none;
-  color: hsl(var(--foreground));
+  color: var(--foreground);
   font-weight: 500;
   padding: 0.5rem 0;
-  border-bottom: 1px solid hsl(var(--border));
+  border-bottom: 1px solid var(--border);
   transition: color 0.3s ease;
 }
 
 .mobile-nav-content a:hover {
-  color: hsl(var(--primary));
+  color: var(--primary);
 }
 
 /* Hero Section */
@@ -299,7 +299,7 @@ html {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: hsl(var(--background));
+  background: var(--background);
   overflow: hidden;
   padding-top: 5rem;
 }
@@ -412,12 +412,12 @@ html {
 }
 
 .text-primary {
-  color: hsl(var(--primary));
+  color: var(--primary);
 }
 
 .hero-subtitle {
   font-size: 1.25rem;
-  color: hsl(var(--muted-foreground));
+  color: var(--muted-foreground);
   margin-bottom: 2rem;
   line-height: 1.6;
 }
@@ -446,26 +446,27 @@ html {
 }
 
 .btn-primary {
-  background-color: hsl(var(--primary));
-  color: hsl(var(--primary-foreground));
+  background-color: var(--primary);
+  color: var(--primary-foreground);
 }
 
 .btn-primary:hover {
-  background-color: hsl(var(--primary) / 0.9);
+  background-color: var(--primary-foreground) ;
+  color: var(--primary);
   transform: translateY(-2px);
   box-shadow: 0 10px 20px hsl(var(--primary) / 0.3);
 }
 
 .btn-outline {
   background-color: transparent;
-  border: 1px solid hsl(var(--border));
-  color: hsl(var(--foreground));
+  border: 1px solid var(--border);
+  color: var(--foreground);
 }
 
 .btn-outline:hover {
-  background-color: hsl(var(--accent));
-  border-color: hsl(var(--primary));
-  color: hsl(var(--accent-foreground));
+  background-color: var(--accent);
+  border-color: var(--primary);
+  color: var(--accent-foreground);
 }
 
 /* Section Headers */
@@ -477,13 +478,13 @@ html {
 .section-header h2 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: hsl(var(--foreground));
+  color: var(--foreground);
   margin-bottom: 1rem;
 }
 
 .section-header p {
   font-size: 1.2rem;
-  color: hsl(var(--muted-foreground));
+  color: var(--muted-foreground);
   max-width: 600px;
   margin: 0 auto;
 }
@@ -491,7 +492,7 @@ html {
 /* About Section */
 .about {
   padding: 6rem 0;
-  background-color: hsl(var(--background));
+  background-color: var(--background);
 }
 
 .about-content {
@@ -504,7 +505,7 @@ html {
 .about-text h3 {
   font-size: 1.5rem;
   font-weight: 600;
-  color: hsl(var(--primary));
+  color: var(--primary);
   margin-bottom: 1rem;
   margin-top: 2rem;
 }
@@ -514,7 +515,7 @@ html {
 }
 
 .about-text p {
-  color: hsl(var(--muted-foreground));
+  color: var(--muted-foreground);
   line-height: 1.7;
   margin-bottom: 1.5rem;
 }
@@ -526,7 +527,7 @@ html {
 }
 
 .stat-card {
-  background-color: hsl(0, 84%, 60% / 0.1);
+  background-color: (0, 84%, 60% / 0.1);
   border: none;
   border-radius: 16px;
   padding: 3rem 2rem;
@@ -542,19 +543,19 @@ html {
 .stat-card h3 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: hsl(var(--primary));
+  color: var(--primary);
   margin-bottom: 0.5rem;
 }
 
 .stat-card p {
-  color: hsl(var(--muted-foreground));
+  color: var(--muted-foreground);
   font-weight: 500;
 }
 
 /* Activities Section */
 .activities {
   padding: 6rem 0;
-  background-color: hsl(var(--background));
+  background-color: var(--background);
 }
 
 .activities-grid {
@@ -564,7 +565,7 @@ html {
 }
 
 .activity-card {
-  background-color: hsl(var(--card));
+  background-color: var(--card);
   border: none;
   border-radius: 16px;
   padding: 2.5rem 2rem;
@@ -588,18 +589,18 @@ html {
   justify-content: center;
   margin-bottom: 1.5rem;
   font-size: 1.5rem;
-  color: hsl(var(--primary));
+  color: var(--primary);
 }
 
 .activity-card h3 {
   font-size: 1.25rem;
   font-weight: 600;
-  color: hsl(var(--foreground));
+  color: var(--foreground);
   margin-bottom: 1rem;
 }
 
 .activity-card p {
-  color: hsl(var(--muted-foreground));
+  color: var(--muted-foreground);
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
@@ -614,21 +615,21 @@ html {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: hsl(var(--muted-foreground));
+  color: var(--muted-foreground);
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
 }
 
 .activity-features li::before {
   content: "•";
-  color: hsl(var(--primary));
+  color: var(--primary);
   font-weight: bold;
 }
 
 /* Team Section */
 .team {
   padding: 6rem 0;
-  background-color: hsl(var(--background));
+  background-color: var(--background);
 }
 
 .team-grid {
@@ -638,8 +639,8 @@ html {
 }
 
 .team-card {
-  background-color: hsl(var(--card));
-  border: 1px solid hsl(var(--border));
+  background-color: var(--card);
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 2rem;
   text-align: center;
@@ -667,7 +668,7 @@ html {
 .team-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 25px 50px hsl(var(--primary) / 0.15);
-  border-color: hsl(var(--primary));
+  border-color: var(--primary);
 }
 
 .member-avatar {
@@ -691,18 +692,18 @@ html {
 .team-card h3 {
   font-size: 1.25rem;
   font-weight: 600;
-  color: hsl(var(--foreground));
+  color: var(--foreground);
   margin-bottom: 0.5rem;
 }
 
 .member-role {
-  color: hsl(var(--primary));
+  color: var(--primary);
   font-weight: 600;
   margin-bottom: 1rem;
 }
 
 .member-bio {
-  color: hsl(var(--muted-foreground));
+  color: var(--muted-foreground);
   line-height: 1.6;
   font-size: 0.9rem;
 }
@@ -710,7 +711,7 @@ html {
 /* Contact Section */
 .contact {
   padding: 6rem 0;
-  background-color: hsl(var(--background));
+  background-color: var(--background);
 }
 
 .contact-content {
@@ -723,12 +724,12 @@ html {
 .contact-info h3 {
   font-size: 1.5rem;
   font-weight: 600;
-  color: hsl(var(--foreground));
+  color: var(--foreground);
   margin-bottom: 1rem;
 }
 
 .contact-info p {
-  color: hsl(var(--muted-foreground));
+  color: var(--muted-foreground);
   line-height: 1.6;
   margin-bottom: 2rem;
 }
@@ -746,18 +747,18 @@ html {
 }
 
 .contact-item strong {
-  color: hsl(var(--primary));
+  color: var(--primary);
   font-weight: 600;
 }
 
 .contact-item span {
-  color: hsl(var(--muted-foreground));
+  color: var(--muted-foreground);
 }
 
 /* Contact Form */
 .contact-form {
-  background-color: hsl(var(--card));
-  border: 1px solid hsl(var(--border));
+  background-color: var(--card);
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 2rem;
 }
@@ -769,7 +770,7 @@ html {
 .form-group label {
   display: block;
   font-weight: 500;
-  color: hsl(var(--foreground));
+  color: var(--foreground);
   margin-bottom: 0.5rem;
 }
 
@@ -777,10 +778,10 @@ html {
 .form-group textarea {
   width: 100%;
   padding: 0.75rem;
-  border: 1px solid hsl(var(--border));
+  border: 1px solid var(--border);
   border-radius: 6px;
-  background-color: hsl(var(--background));
-  color: hsl(var(--foreground));
+  background-color: var(--background);
+  color: var(--foreground);
   transition: all 0.3s ease;
   font-family: inherit;
 }
@@ -788,7 +789,7 @@ html {
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: hsl(var(--primary));
+  border-color: var(--primary);
   box-shadow: 0 0 0 3px hsl(var(--primary) / 0.1);
 }
 
@@ -799,8 +800,8 @@ html {
 
 /* Footer */
 .footer {
-  background-color: hsl(var(--background));
-  border-top: 1px solid hsl(var(--border));
+  background-color: var(--background);
+  border-top: 1px solid var(--border);
   padding: 3rem 0 1rem;
 }
 
@@ -823,7 +824,7 @@ html {
 }
 
 .footer-brand p {
-  color: hsl(var(--muted-foreground));
+  color: var(--muted-foreground);
   line-height: 1.6;
   max-width: 300px;
 }
@@ -840,15 +841,15 @@ html {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 6px;
-  background-color: hsl(var(--muted));
-  color: hsl(var(--muted-foreground));
+    background-color: var(--muted);
+  color: var(--muted-foreground);
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 .social-link:hover {
-  background-color: hsl(var(--primary));
-  color: hsl(var(--primary-foreground));
+  background-color: var(--primary);
+  color: var(--primary-foreground);
   transform: translateY(-2px);
 }
 
@@ -860,7 +861,7 @@ html {
 
 .footer-section h4 {
   font-weight: 600;
-  color: hsl(var(--foreground));
+  color: var(--foreground);
   margin-bottom: 1rem;
 }
 
@@ -873,23 +874,23 @@ html {
 }
 
 .footer-section a {
-  color: hsl(var(--muted-foreground));
+  color: var(--muted-foreground);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .footer-section a:hover {
-  color: hsl(var(--primary));
+  color: var(--primary);
 }
 
 .footer-bottom {
-  border-top: 1px solid hsl(var(--border));
+  border-top: 1px solid var(--border);
   padding-top: 1rem;
   text-align: center;
 }
 
 .footer-bottom p {
-  color: hsl(var(--muted-foreground));
+  color: var(--muted-foreground);
 }
 
 /* Responsive Design */

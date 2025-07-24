@@ -1,4 +1,4 @@
-// Theme Management
+// ===================== Theme Management =====================
 class ThemeManager {
     constructor() {
         this.theme = localStorage.getItem('theme') || 'light';
@@ -11,11 +11,7 @@ class ThemeManager {
     }
 
     applyTheme() {
-        if (this.theme === 'dark') {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
+        document.documentElement.classList.toggle('dark', this.theme === 'dark');
     }
 
     toggleTheme() {
@@ -32,7 +28,7 @@ class ThemeManager {
     }
 }
 
-// Mobile Navigation
+// ===================== Mobile Navigation =====================
 class MobileNav {
     constructor() {
         this.isOpen = false;
@@ -47,7 +43,6 @@ class MobileNav {
     setupToggle() {
         const toggleBtn = document.getElementById('mobileMenuBtn');
         const mobileNav = document.getElementById('mobileNav');
-        
         if (toggleBtn && mobileNav) {
             toggleBtn.addEventListener('click', () => this.toggle());
         }
@@ -56,8 +51,7 @@ class MobileNav {
     setupLinks() {
         const mobileNav = document.getElementById('mobileNav');
         if (mobileNav) {
-            const links = mobileNav.querySelectorAll('a');
-            links.forEach(link => {
+            mobileNav.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => this.close());
             });
         }
@@ -65,49 +59,37 @@ class MobileNav {
 
     toggle() {
         this.isOpen = !this.isOpen;
-        const toggleBtn = document.getElementById('mobileMenuBtn');
-        const mobileNav = document.getElementById('mobileNav');
-        
-        if (toggleBtn && mobileNav) {
-            toggleBtn.classList.toggle('active', this.isOpen);
-            mobileNav.classList.toggle('active', this.isOpen);
-        }
+        document.getElementById('mobileMenuBtn').classList.toggle('active', this.isOpen);
+        document.getElementById('mobileNav').classList.toggle('active', this.isOpen);
     }
 
     close() {
         this.isOpen = false;
-        const toggleBtn = document.getElementById('mobileMenuBtn');
-        const mobileNav = document.getElementById('mobileNav');
-        
-        if (toggleBtn && mobileNav) {
-            toggleBtn.classList.remove('active');
-            mobileNav.classList.remove('active');
-        }
+        document.getElementById('mobileMenuBtn').classList.remove('active');
+        document.getElementById('mobileNav').classList.remove('active');
     }
 }
 
-// Smooth Scrolling
+// ===================== Smooth Scrolling =====================
 class SmoothScroll {
     constructor() {
         this.init();
     }
 
     init() {
-        const links = document.querySelectorAll('a[href^="#"]');
-        links.forEach(link => {
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
             link.addEventListener('click', (e) => this.handleClick(e));
         });
     }
 
     handleClick(e) {
-        e.preventDefault();
         const href = e.currentTarget.getAttribute('href');
+        if (!href || href === '#') return;
+        e.preventDefault();
         const target = document.querySelector(href);
-        
         if (target) {
             const headerHeight = document.querySelector('.navbar').offsetHeight;
             const targetPosition = target.offsetTop - headerHeight;
-            
             window.scrollTo({
                 top: targetPosition,
                 behavior: 'smooth'
@@ -116,7 +98,7 @@ class SmoothScroll {
     }
 }
 
-// Contact Form
+// ===================== Contact Form =====================
 class ContactForm {
     constructor() {
         this.init();
@@ -131,40 +113,30 @@ class ContactForm {
 
     handleSubmit(e) {
         e.preventDefault();
-        
-        // Get form data
         const formData = new FormData(e.target);
         const data = Object.fromEntries(formData);
-        
-        // Simple validation
+
         if (!data.name || !data.email || !data.subject || !data.message) {
             this.showMessage('Please fill in all fields.', 'error');
             return;
         }
-        
         if (!this.isValidEmail(data.email)) {
             this.showMessage('Please enter a valid email address.', 'error');
             return;
         }
-        
-        // Simulate form submission
+
         this.showMessage('Thank you for your message! We\'ll get back to you soon.', 'success');
         e.target.reset();
     }
 
     isValidEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
 
     showMessage(message, type) {
-        // Remove existing messages
         const existingMessage = document.querySelector('.form-message');
-        if (existingMessage) {
-            existingMessage.remove();
-        }
-        
-        // Create new message
+        if (existingMessage) existingMessage.remove();
+
         const messageEl = document.createElement('div');
         messageEl.className = `form-message ${type}`;
         messageEl.textContent = message;
@@ -173,61 +145,46 @@ class ContactForm {
             border-radius: 6px;
             margin-top: 1rem;
             font-weight: 500;
-            ${type === 'success' 
-                ? 'background-color: hsl(120, 50%, 90%); color: hsl(120, 50%, 20%); border: 1px solid hsl(120, 50%, 70%);'
-                : 'background-color: hsl(0, 50%, 90%); color: hsl(0, 50%, 20%); border: 1px solid hsl(0, 50%, 70%);'
-            }
+            ${type === 'success'
+                ? 'background-color: hsl(120, 50%, 90%); color: hsl(120, 40%, 20%); border: 1px solid hsl(120, 50%, 70%);'
+                : 'background-color: hsl(0, 50%, 90%); color: hsl(0, 40%, 20%); border: 1px solid hsl(0, 50%, 70%);'}
         `;
-        
-        // Insert message after form
-        const form = document.getElementById('contactForm');
-        form.insertAdjacentElement('afterend', messageEl);
-        
-        // Remove message after 5 seconds
-        setTimeout(() => {
-            if (messageEl.parentNode) {
-                messageEl.remove();
-            }
-        }, 5000);
+
+        document.getElementById('contactForm').insertAdjacentElement('afterend', messageEl);
+        setTimeout(() => messageEl.remove(), 5000);
     }
 }
 
-// Navbar Scroll Effect
+// ===================== Navbar Scroll Effect =====================
 class NavbarScroll {
     constructor() {
+        this.navbar = document.querySelector('.navbar');
         this.init();
     }
 
     init() {
+        if (!this.navbar) return;
         window.addEventListener('scroll', () => this.handleScroll());
     }
 
     handleScroll() {
-        const navbar = document.querySelector('.navbar');
-        if (navbar) {
-            if (window.scrollY > 100) {
-                navbar.style.backgroundColor = 'hsl(var(--background) / 0.98)';
-                navbar.style.boxShadow = '0 4px 20px hsl(var(--primary) / 0.1)';
-            } else {
-                navbar.style.backgroundColor = 'hsl(var(--background) / 0.95)';
-                navbar.style.boxShadow = 'none';
-            }
+        if (window.scrollY > 100) {
+            this.navbar.style.backgroundColor = 'hsl(var(--background) / 0.98)';
+            this.navbar.style.boxShadow = '0 4px 20px hsl(var(--primary) / 0.1)';
+        } else {
+            this.navbar.style.backgroundColor = 'hsl(var(--background) / 0.95)';
+            this.navbar.style.boxShadow = 'none';
         }
     }
 }
 
-// Intersection Observer for Animations
+// ===================== Scroll Animations =====================
 class ScrollAnimations {
     constructor() {
         this.init();
     }
 
     init() {
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -235,18 +192,17 @@ class ScrollAnimations {
                     entry.target.style.opacity = '1';
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-        // Observe elements that should animate
-        const animateElements = document.querySelectorAll('.activity-card, .team-card, .stat-card, .about-text, .contact-info, .contact-form');
-        animateElements.forEach(el => {
-            el.style.opacity = '0';
-            observer.observe(el);
-        });
+        document.querySelectorAll('.activity-card, .team-card, .stat-card, .about-text, .contact-info, .contact-form')
+            .forEach(el => {
+                el.style.opacity = '0';
+                observer.observe(el);
+            });
     }
 }
 
-// Particle System for Hero Background
+// ===================== Particle System =====================
 class ParticleSystem {
     constructor() {
         this.particles = [];
@@ -255,86 +211,73 @@ class ParticleSystem {
 
     init() {
         this.createCanvas();
-        this.createParticles();
-        this.animate();
+        if (this.canvas) {
+            this.createParticles();
+            this.animate();
+        }
     }
 
     createCanvas() {
         const hero = document.querySelector('.hero');
         if (!hero) return;
-
         this.canvas = document.createElement('canvas');
-        this.canvas.style.position = 'absolute';
-        this.canvas.style.top = '0';
-        this.canvas.style.left = '0';
-        this.canvas.style.width = '100%';
-        this.canvas.style.height = '100%';
-        this.canvas.style.pointerEvents = 'none';
-        this.canvas.style.zIndex = '1';
-        this.canvas.style.opacity = '0.3';
-        
+        Object.assign(this.canvas.style, {
+            position: 'absolute',
+            top: '0',
+            left: '0',
+            width: '100%',
+            height: '100%',
+            pointerEvents: 'none',
+            zIndex: '1',
+            opacity: '0.3'
+        });
         this.ctx = this.canvas.getContext('2d');
         hero.appendChild(this.canvas);
-        
         this.resize();
         window.addEventListener('resize', () => this.resize());
     }
 
     resize() {
         if (!this.canvas) return;
-        
         const hero = document.querySelector('.hero');
         this.canvas.width = hero.offsetWidth;
         this.canvas.height = hero.offsetHeight;
     }
 
     createParticles() {
-        const particleCount = window.innerWidth < 768 ? 20 : 40;
-        
-        for (let i = 0; i < particleCount; i++) {
-            this.particles.push({
-                x: Math.random() * this.canvas.width,
-                y: Math.random() * this.canvas.height,
-                vx: (Math.random() - 0.5) * 0.5,
-                vy: (Math.random() - 0.5) * 0.5,
-                size: Math.random() * 2 + 1,
-                opacity: Math.random() * 0.5 + 0.2
-            });
-        }
+        const count = window.innerWidth < 768 ? 20 : 40;
+        this.particles = Array.from({ length: count }, () => ({
+            x: Math.random() * this.canvas.width,
+            y: Math.random() * this.canvas.height,
+            vx: (Math.random() - 0.5) * 0.5,
+            vy: (Math.random() - 0.5) * 0.5,
+            size: Math.random() * 2 + 1,
+            opacity: Math.random() * 0.5 + 0.2
+        }));
     }
 
     animate() {
         if (!this.ctx) return;
-        
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        
-        // Get current theme
         const isDark = document.documentElement.classList.contains('dark');
-        const color = isDark ? '255, 255, 255' : '220, 38, 127'; // white for dark theme, red for light theme
-        
-        this.particles.forEach(particle => {
-            // Update position
-            particle.x += particle.vx;
-            particle.y += particle.vy;
-            
-            // Wrap around edges
-            if (particle.x < 0) particle.x = this.canvas.width;
-            if (particle.x > this.canvas.width) particle.x = 0;
-            if (particle.y < 0) particle.y = this.canvas.height;
-            if (particle.y > this.canvas.height) particle.y = 0;
-            
-            // Draw particle
+        const color = isDark ? '255, 255, 255' : '220, 38, 127';
+        this.particles.forEach(p => {
+            p.x += p.vx;
+            p.y += p.vy;
+            if (p.x < 0) p.x = this.canvas.width;
+            if (p.x > this.canvas.width) p.x = 0;
+            if (p.y < 0) p.y = this.canvas.height;
+            if (p.y > this.canvas.height) p.y = 0;
             this.ctx.beginPath();
-            this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-            this.ctx.fillStyle = `rgba(${color}, ${particle.opacity})`;
+            this.ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            this.ctx.fillStyle = `rgba(${color}, ${p.opacity})`;
             this.ctx.fill();
         });
-        
         requestAnimationFrame(() => this.animate());
     }
 }
 
-// Initialize everything when DOM is loaded
+// ===================== Initialize All =====================
 document.addEventListener('DOMContentLoaded', () => {
     new ThemeManager();
     new MobileNav();
@@ -343,8 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
     new NavbarScroll();
     new ScrollAnimations();
     new ParticleSystem();
-    
-    // Add loading animation
+
     document.body.style.opacity = '0';
     setTimeout(() => {
         document.body.style.transition = 'opacity 0.5s ease';
@@ -352,12 +294,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 100);
 });
 
-// Handle window resize
+// ===================== Window Resize Handler =====================
 window.addEventListener('resize', () => {
-    // Close mobile menu on resize
     const mobileNav = document.getElementById('mobileNav');
     const toggleBtn = document.getElementById('mobileMenuBtn');
-    
     if (mobileNav && toggleBtn) {
         mobileNav.classList.remove('active');
         toggleBtn.classList.remove('active');
