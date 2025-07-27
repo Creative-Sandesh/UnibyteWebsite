@@ -145,6 +145,7 @@ class ContactForm {
             border-radius: 6px;
             margin-top: 1rem;
             font-weight: 500;
+            text-align: right;
             ${type === 'success'
                 ? 'background-color: hsl(120, 50%, 90%); color: hsl(120, 40%, 20%); border: 1px solid hsl(120, 50%, 70%);'
                 : 'background-color: hsl(0, 50%, 90%); color: hsl(0, 40%, 20%); border: 1px solid hsl(0, 50%, 70%);'}
@@ -229,7 +230,10 @@ class ParticleSystem {
             height: '100%',
             pointerEvents: 'none',
             zIndex: '1',
-            opacity: '0.3'
+            opacity: '0.3',
+            color: 'rgba(255, 255, 255, 0.3)'
+
+            
         });
         this.ctx = this.canvas.getContext('2d');
         hero.appendChild(this.canvas);
